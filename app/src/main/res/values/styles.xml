@@ -1,11 +1,38 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar.Bridge">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="category">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="Free">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextView.Primary.Header">
+        <item name="android:textAppearance">@style/Text.Primary.Header</item>
+    </style>
+
+    <style name="Text.Primary.Header">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextView.Primary"></style>
+
+    <style name="TextView"></style>
+
+    <style name="Text"></style>
+
+    <style name="Text.Primary"></style>
+
 
 </resources>

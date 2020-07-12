@@ -1,18 +1,21 @@
-package com.example.android3;
+package com.example.android3.presentation.intro;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+
+import com.example.android3.R;
+import com.example.android3.data.AppPreferences;
+import com.example.android3.presentation.main.MainActivity;
+import com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator;
 
 import static androidx.viewpager.widget.ViewPager.*;
 
@@ -25,11 +28,15 @@ public class IntroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
-        skip = findViewById(R.id.skip);
-        next = findViewById(R.id.next);
+        skip = findViewById(R.id.btn_skip);
+        next = findViewById(R.id.btn_next);
 
-        viewPager = findViewById(R.id.pager);
+
+
+        viewPager = findViewById(R.id.ViewPager);
         viewPager.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager()));
+        SpringDotsIndicator springDotsIndicator = findViewById(R.id.spring_dots_indicator);
+        springDotsIndicator.setViewPager(viewPager);
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
@@ -65,9 +72,13 @@ public class IntroActivity extends AppCompatActivity {
         });
 
 
+
+
     }
 
     public void onClickSkip(View view) {
+        new AppPreferences(IntroActivity.this).setLaunched();
+
         startActivity(new Intent(this, MainActivity.class));
         finish();
     }
@@ -76,7 +87,8 @@ public class IntroActivity extends AppCompatActivity {
         if (viewPager.getCurrentItem() < 2) {
             viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
         } else {
-            onClickSkip(view);
+            MainActivity.start(this);
+            finish();
         }
 
 
@@ -94,7 +106,7 @@ public class IntroActivity extends AppCompatActivity {
         @Override
         public Fragment getItem(int position) {
             Bundle bundle = new Bundle();
-            bundle.putInt("pager", position);
+            bundle.putInt("position", position);
             IntroFragment fragment = new IntroFragment();
             fragment.setArguments(bundle);
 

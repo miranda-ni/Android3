@@ -1,4 +1,4 @@
-package com.example.android3;
+package com.example.android3.presentation.intro;
 
 import android.os.Bundle;
 
@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.android3.R;
 
 
 /**
@@ -29,5 +31,19 @@ public class IntroFragment extends Fragment {
 
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
+        int pos = getArguments().getInt("position");
+
+        switch (pos){
+            case 0:
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+        }
+    }
 }

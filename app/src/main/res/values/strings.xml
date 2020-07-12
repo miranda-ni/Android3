@@ -3,4 +3,37 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="category">CATEGORY</string>
+    <string name="explore">Explore the night life of your city</string>
+    <string name="paymentType">Free</string>
+    <string name="price">price</string>
+    <string name="participants">Participants</string>
+    <string name="next">NEXT</string>
+    <string name="rangeBar">0.0-1.0</string>
+    <string name="accessibility">Accessibility</string>
+    <string name="favorites">Favorites</string>
+    <string name="home">Home</string>
+    <string name="explore_the_nightlife_of_your_city">Explore the nightlife of your city</string>
+
+    <array name="rangeBarValue">
+        <item>0.35</item>
+        <item>0.85</item>
+    </array>
+
+
+
+    <string-array name="spinner_array">
+        <item>Type</item>
+        <item>education</item>
+        <item>recreational</item>
+        <item>social</item>
+        <item>diy</item>
+        <item>charity</item>
+        <item>cooking</item>
+        <item>relaxation</item>
+        <item>music</item>
+        <item>busywork</item>
+    </string-array>
+
 </resources>
+
