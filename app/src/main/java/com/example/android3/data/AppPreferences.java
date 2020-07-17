@@ -9,7 +9,9 @@ public class AppPreferences {
 
     public AppPreferences(Context context){
 
-        preferences = context.getSharedPreferences("bored_app_prefs",Context.MODE_PRIVATE);
+        preferences = context.getSharedPreferences(
+                "bored_app_prefs"
+                ,Context.MODE_PRIVATE);
     }
 
     public void setLaunched(){

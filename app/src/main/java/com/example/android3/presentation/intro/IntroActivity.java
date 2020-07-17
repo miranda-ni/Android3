@@ -87,7 +87,7 @@ public class IntroActivity extends AppCompatActivity {
         if (viewPager.getCurrentItem() < 2) {
             viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
         } else {
-            MainActivity.start(this);
+//            MainActivity.start(this);
             finish();
         }
 

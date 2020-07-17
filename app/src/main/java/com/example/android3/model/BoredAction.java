@@ -1,35 +1,44 @@
 package com.example.android3.model;
 
 import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 import com.google.gson.annotations.SerializedName;
-//
-//  "activity": "Learn a new programming language",
-//          "type": "education",
-//          "participants": 1,
-//          "price": 0.1,
-//          "link": "",
-//          "key": "5881028",
-//          "accessibility": 0.25
-
+@Entity(tableName = "bored_action")
 public class BoredAction {
 
+    public BoredAction(@NonNull String key) {
+        this.key = key;
+    }
+
+    @SerializedName("key")
+    @PrimaryKey
+    @NonNull
+    @ColumnInfo(name = "uuid")
+    private String key;
+
     @SerializedName("activity")
+    @ColumnInfo(name = "activity")
     private String activity;
 
     @SerializedName("type")
+    @ColumnInfo(name = "type")
     private String type;
 
-    @SerializedName("key")
-    private String key;
+
 
     @SerializedName("participants")
+    @ColumnInfo(name = "participants")
     private Integer participants;
 
     @SerializedName("price")
+    @ColumnInfo(name = "price")
     private Float price;
 
     @SerializedName("accessibility")
+    @ColumnInfo(name = "accessibility")
     private Float accessibility;
 
 
@@ -48,6 +57,15 @@ public class BoredAction {
 
     }
 
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
     public String getActivity() {
         return activity;
     }
@@ -64,13 +82,6 @@ public class BoredAction {
         this.type = type;
     }
 
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
 
     public Integer getParticipants() {
         return participants;
